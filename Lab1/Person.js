@@ -1,13 +1,3 @@
-/*Create a Person class (in a file named "Person.js") with the following:
-Properties:
-name (String)
-favoriteColor (String)
-Functions:
-constructor()
-Should accept two arguments and store their values as part of the class
-speak()
-This function should use console.log() to show the person's name in their favorite color*/
-
 const chalk = require('chalk');
 
 class Person {
