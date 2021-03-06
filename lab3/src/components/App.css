@@ -1,0 +1,34 @@
+body{ 
+  background-color: #f0c1ce;
+  text-align: center;
+}
+h1 { 
+  font-family: Bookman Old Style;
+  font-size: 50px; 
+  margin-left: 20px; 
+  text-align: center;
+}
+h2{
+  font-family: Bookman Old Style;
+  font-size: 30px;
+  text-align: center;
+}
+li{
+  font-family: Bookman Old Style;
+  font-size: 20px;
+  text-align: center;
+}
+#id{ 
+  background-color: #ffffff;
+  border-radius: 20%;
+  width: 400px;
+  height: 250px;
+  display: inline-block;  
+}
+#id2{ 
+  background-color: #ffffff;
+  border-radius: 20%;
+  width: 400px;
+  height: 250px;
+  display: inline-block;
+}

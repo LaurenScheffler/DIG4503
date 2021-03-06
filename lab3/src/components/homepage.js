@@ -1,9 +1,10 @@
 import React from 'react';
+import './App.css';
 
 class HomePage extends React.Component { 
 
   render(fname) { 
-    return <h1>Hello, {this.props.firstName}</h1>; 
+    return <body><h1>Hello, {this.props.firstName}</h1></body>; 
   }
 }
 
