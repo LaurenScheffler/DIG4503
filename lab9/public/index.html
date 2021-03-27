@@ -1,0 +1,116 @@
+<html>
+  <body>
+    <script>
+      //creating a function to retrieve employee name based on Age input
+      function belongingAge(event) {
+        //stops any initial steps and functions exactly as the code states
+        event.preventDefault();
+        //creates a variable named element and selects the id age from the html below
+        let element = document.querySelector("#age");
+        //obtains the path /ages/ followed by our variable element's value which is the id age
+        fetch("/ages/" + element.value) 
+        //then to return the response as json
+        .then((res) => {
+          return res.json(); 
+        })
+        //then take the processed data from the id age in our html
+        .then((processed) => {
+          //creates a variable named reporting that selects the id reportingArea from the html below (basically selects the reporting area)
+          let reporting = document.querySelector("#reportingArea");
+          //if the processed data from #age returned an error then display the error in the html of the reporting area
+          if(processed.error) {
+            reporting.innerHTML = processed.error;
+            //if the processed data did not return an error then display the name belonging to the age input 
+          } else {
+            reporting.innerHTML = processed.name; 
+          }
+        });
+      }
+      //creating a function to retrieve employee age based on Name input
+      function belongingName(event) {
+        //stops any initial steps and functions exactly as the code states
+        event.preventDefault(); 
+        //creates a variable named element and selects the id name from the html below
+        let element = document.querySelector("#name");
+        //obtains the path /employees/ followed by our variable element's value which is the id name 
+        fetch("/employees/" + element.value)
+        //then to return the response as json
+        .then((res) => {
+          return res.json();
+        })
+        //then take the processed data from the id name in our html 
+        .then((processed) => {
+          //create variable named reporting and selects the id reportingArea from the html below (basically selects the reporting area)
+          let reporting = document.querySelector("#reportingArea");
+          //if the processed data from #name returned an error then display the error in the html of reporting area 
+          if(processed.error) { 
+            reporting.innerHTML = processed.error;
+            //if the processed data did not return an error then display the age belonging to the name input 
+          } else {
+            reporting.innerHTML = processed.age; 
+          }
+        });
+      }
+      //
+      function addEmployee(event) {
+        //stops any initial steps and functions exactly as the code states
+        event.preventDefault();
+        //creates a variable named name that selects the id employeeName from the html below
+        let name = document.querySelector("#employeeName");
+        //creates a variable named age that selects the id employeeAge from the html below
+        let age = document.querySelector("#employeeAge"); 
+        //obtains the path /employees/ followed by the value name / followed by the value age based on the input values from the form
+        fetch("/employees/" + name.value + "/" + age.value, {
+          //defines the method being used as post for the values input from the form 
+          "method": "post"
+          //then to return the response as json
+        }).then((res) => {
+          return res.json();
+          //once the values are processed to console log the data that was processed
+        }).then((processed) => {
+          console.log(processed);
+        });
+      }
+    </script>
+    <!--heading titled Age-->
+    <h2>Age</h2>
+    <!--starts the form to retrieve employee name based on Age input-->
+    <form onsubmit="belongingAge(event)">
+      <!--the textbox to put the employee age-->
+        <input id="age" type="text">
+        <!--submit button-->
+        <button>Submit</button>
+      <!--close form-->
+    </form>
+    <!--heading titled Name-->
+    <h2>Name</h2>
+    <!--starts the form for retrieving the age based on the Name input-->
+    <form onsubmit="belongingName(event)">
+      <!--the textbox to put the employee name-->
+        <input id="name" type="text">
+        <!--submit button-->
+        <button>Submit</button>
+      <!--close form-->
+    </form>
+    <!--a horizontal line that creates a breaking point on the screen-->
+    <hr>
+    <!--starts the form for adding an employee to the database.json file -->
+    <form onsubmit="addEmployee(event)">
+      <!--the textbox to put the employee name-->
+      <input id="employeeName" type="text">
+      <!--the textbox to put the employee age-->
+      <input id="employeeAge" type="text">
+      <!--submit button-->
+      <button>Submit</button>
+      <!--close form-->
+    </form>
+    <!--a horizontal line that creates a breaking point on the screen-->
+    <hr>
+    <!--heading titled Reporting-->
+    <h2>Reporting</h2>
+    <!--the div containing the reporting area for our functions-->
+    <div id="reportingArea">
+      <!--the area where all of the function responses will display-->
+    </div>
+  </body>
+</html>
