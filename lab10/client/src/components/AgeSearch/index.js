@@ -24,9 +24,11 @@ class AgeSearch extends React.Component {
         reporting.innerHTML = processed.name; 
       }
     });
+    //defines the element.value from line 10
     element.value = "";
   }
   render() {
+    //AgeSearch will display as the html below with the function above within our html form 
     return(
       <div>
         <h2>Age</h2>

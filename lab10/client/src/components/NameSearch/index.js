@@ -24,9 +24,11 @@ class NameSearch extends React.Component {
         reporting.innerHTML = processed.age; 
       }
     });
+    //this defines element.value within line 10
     element.value = ""; 
   }
   render() {
+    //NameSearch displays as the html below and has the funtion above within the html form below 
     return(
       <div>
         <h2>Name</h2>
