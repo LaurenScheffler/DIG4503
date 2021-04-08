@@ -19,7 +19,7 @@ MongoClient.connect(URL, {useUnifiedTopology: true})
     connection.close();
   })
 })
-//if there is an error console log it in the terminal 
+//if there is an error in connection it will be passed here and be console logged in the terminal 
 .catch(error => {
   console.log("Error: " + error);
 })
