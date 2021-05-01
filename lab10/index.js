@@ -8,7 +8,7 @@ import cors from "cors";
 //creating a variable named App with the value of a function named Express which will use what is imported above
 const App = Express(); 
 //creating a port and defining the port number the server will be run on as 3010
-const port = 30010; 
+const port = 3010; 
 //creating a layered system by using both CORS and Express allowing communication across ports
 App.use(cors());
 
