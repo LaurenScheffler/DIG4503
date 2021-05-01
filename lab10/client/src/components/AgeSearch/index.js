@@ -7,7 +7,7 @@ class AgeSearch extends React.Component {
     //creates a variable named element and selects the id age from the html below
     let element = document.querySelector("#age");
     //obtains the path /ages/ followed by our variable element's value which is the id age
-    fetch("/ages/" + element.value) 
+    fetch("/employees/ages/" + element.value) 
     //then to return the response as json
     .then((res) => {
       return res.json(); 

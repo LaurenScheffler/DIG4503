@@ -1,38 +1,103 @@
+/* center aligns all components and adds background color */
 .App {
   text-align: center;
+  background-color: #0a2239;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*styling for the main title Employee Database */
+h1 {
+  color: #1d84b5;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* styling for the subheadings */
+h2 {
+  color: #1d84b5;
+}
+
+/* styling for the reporting area title */
+h2.area {
+  color: #96D6ED/*#87CAE3*/;
+}
+
+/* styling for the instructions on page under heading */
+p {
+  color: #87CAE3;
+}
+
+/* styles the instructions on page under heading */
+p.add {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* creates the columns for the first row that displays the input fields */ 
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* input textbox styling */
+input {
+  border-radius: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+/* styling for submit buttons */
+button {
+  border-radius: 25px;
+  background-color: #176087;
+  color: #87CAE3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* styling for submit buttons when hovered over */
+button:hover {
+  border-radius: 25px;
+  background-color: #87CAE3;
+  color: #176087;
+}
+
+/* styling for the horizontal lines */
+hr {
+  border: 3px solid #176087;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* styles the horizontal line above the employee identification number section */
+hr.new {
+  border: 3px solid #176087;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* styling for the reporting area */
+.Report {
+  margin: auto;
+  background-color: #176087;
+  border-radius: 25px;
+  border-color: #1d84b5;
+  padding: 20px;
+  width: 400px;
+  height: 250px;
+}
+
+/* styling for the search results section */
+#reportingArea {
+  color: #96D6ED;
 }
